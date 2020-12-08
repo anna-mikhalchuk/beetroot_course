@@ -20,14 +20,13 @@ exclude_list = ('USLACKBOT', 'U01EU5ESD7V',
 
 i = 0
 my_dict = {}
-while i < 18:
+while i < len(data['members']):
+    if data['members'][i]['id'] in exclude_list:
+        i += 1
+        continue
     my_dict.update({data['members'][i]['id']: data['members'][i]['profile']['real_name']})
     i += 1
 # print(my_dict, type(my_dict))
-
-for key in exclude_list:
-    my_dict.pop(key)
-print('New Dict:', my_dict)
 
 victim_name = random.choice(list(my_dict.values()))
 print(victim_name)
