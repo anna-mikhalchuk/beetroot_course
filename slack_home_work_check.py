@@ -14,20 +14,19 @@ data = req_get.json()
 # pprint.pprint(data)
 # print(type(data))
 
+exclude_list = ('USLACKBOT', 'U01EU5ESD7V',
+                'U01EXA4224W', 'U01F89XMWPP',
+                'U01GZ001TNC')
+
 i = 0
 my_dict = {}
 while i < 18:
     my_dict.update({data['members'][i]['id']: data['members'][i]['profile']['real_name']})
     i += 1
-print(my_dict, type(my_dict))
+# print(my_dict, type(my_dict))
 
-my_dict.pop('USLACKBOT', 'U01EU5ESD7V')
-my_dict.pop('U01EXA4224W', 'U01F89XMWPP')
-my_dict.pop('U01GZ001TNC')
-# U01EU5ESD7V violetta.shmitko
-# U01F89XMWPP alexander.solyavkun.a
-# U01GZ001TNC hometask
-# U01EXA4224W onereach
+for key in exclude_list:
+    my_dict.pop(key)
 print('New Dict:', my_dict)
 
 victim_name = random.choice(list(my_dict.values()))
