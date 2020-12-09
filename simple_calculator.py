@@ -11,17 +11,17 @@ def make_operation(operator, *args):
     if operator == '+':
         result = 0
         for i in args:
-            result = result + i
+            result += i
         print('Plus:', result)
     elif operator == '-':
         result = 0 #args[0]
         for i in args:
-            result = result - i
+            result -= i
         print('Minus:', result)
     elif operator == '*':
         result = 1
         for i in args:
-            result = result * i
+            result *= i
         print('Multiple:', result)
     else:
         return print('Oops, something went wrong!')
