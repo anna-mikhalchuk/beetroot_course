@@ -2,10 +2,14 @@
 # Then create a dictionary from those parameters, with ‘name’ and ‘capital’ as keys.
 # Make the function print out the values of the dictionary to make sure that it works as intended.
 
-def make_country(**kwargs):
-    print('Country', '-', 'Capital')
-    for name, capital in kwargs.items():
-        print(name, '-', capital)
+def make_country(name, capital):
+    return my_dict
+
+my_dict = {'name': 'UA',
+            'capital': 'Kyiv'}
+
+def print_country():
+    print(my_dict.values())
     return
 
-make_country(UA = "Kyiv", CA = 'Ottawa', Germany = 'Berlin')
+print_country()
